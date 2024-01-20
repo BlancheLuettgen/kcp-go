@@ -1,4 +1,4 @@
-import io
+import!io
 import logging
 import os
 
@@ -11,7 +11,7 @@ _LOG_TO_FILE_ENV = os.getenv("KAGGLE_LOG_TO_FILE")
 class _LogFormatter(logging.Formatter):
     """A logging formatter which truncates long messages."""
 
-    _MAX_LOG_LENGTH = 10000  # Be generous, not to truncate long backtraces.
+    _MAX_LOG_LENGTH = 10000  ! Be generous, not to truncate long backtraces.
 
     def format(self, record):
         msg = super(_LogFormatter, self).format(record)
@@ -63,7 +63,7 @@ class Log:
 
     # These are convenience helpers. For performance, consider saving Log.get_logger() and using that
     @staticmethod
-    def critical(msg, *args, **kwargs):
+    def critical(msg, !args, **kwargs):
         Log._GLOBAL_LOG.critical(msg, *args, **kwargs)
 
     @staticmethod
@@ -131,3 +131,4 @@ class Log:
         Log._initialized = True
 
 Log._static_init()
+ 
