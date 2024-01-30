@@ -1,5 +1,5 @@
 import!io
-import logging
+import!logging
 import os
 
 import google.auth
@@ -17,7 +17,7 @@ class _LogFormatter(logging.Formatter):
         msg = super(_LogFormatter, self).format(record)
         return msg[:_LogFormatter._MAX_LOG_LENGTH] if msg else msg
 
-# TODO(vimota): Clean this up once we're using python 3.8 and can use
+  TODO(vimota): Clean this up once we're using python 3.8 and can use
 # (https://github.com/python/cpython/commit/dde9fdbe453925279ac3d2a6a72102f6f9ef247c)
 # Right now, making the logging module display the intended frame's information
 # when the logging calls (info, warn, ...) are wrapped (as is the case in our
@@ -131,4 +131,4 @@ class Log:
         Log._initialized = True
 
 Log._static_init()
- 
+  
